@@ -7,14 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render 'layouts/header' %>
 	<div class="container">
-      <%= render 'layouts/header' %>
-      <section class = "round" >
-          <%= yield %>
-      </section>
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+	  <div class="banner">
+	  	<%= render 'layouts/banner' %>
+	  </div>
+	  <div class="content">
+      	<section class = "round" >
+        	  <%= yield %>
+      	</section>
+      </div>
   </div>
+  <%= render 'layouts/footer' %>
+  <%= debug(params) if Rails.env.development? %>
   
 </body>
 </html>
