@@ -1,3 +1,11 @@
+h2
+{
+  margin-bottom:0px;
+  margin-top:0px;
+  padding-bottom:0px;
+  padding-top:0px;
+}
+
 #userDataContainer
 {
   overflow:visible;
@@ -6,3 +14,72 @@
   height:53px;
   margin-right:50px;
 }
+
+#displayUser
+{
+  display:inline;
+  position:relative;
+  float:left;
+  height:53px;
+  margin-right:10px;
+  padding-right:5px;
+}
+
+#fridgeSelector
+{
+  float:left;
+  position:relative;
+  height:53px;
+}
+
+#itemFunctionsContainer 
+{
+  display:inline;
+  float:left;
+  min-height:416px;
+  position:relative;
+  padding-left:10px;
+}
+
+#addItem 
+{
+  border-bottom:double;
+  padding-bottom:35px;
+  position:relative;
+}
+
+#fridgeDisplay
+{
+  float:left;
+  position:relative;
+  padding-left:50px;
+}
+
+#contentTableDiv
+{
+  overflow:auto;
+  height:350px;
+}
+
+table,tr,th
+{
+  border:1px solid #000000;
+}
+
+tr
+{
+  width:100px;
+  text-align:center;
+}
+
+td
+{
+  width:100px;
+  padding:2px;
+  border-bottom:1px solid #000000;
+}
+
+#catName { width:96px; }
+#catQty { width:93px; }
+#catExp { width:97px; }
+#catOpt { width:97px; }
