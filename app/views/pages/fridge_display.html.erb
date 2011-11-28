@@ -1,2 +1,28 @@
-<h1>Pages#fridge_display</h1>
-<p>Find me in app/views/pages/fridge_display.html.erb</p>
+<div id="userDataContainer">
+	<div id="displayUser">
+		<%= image_tag 'subArrow.png' %>
+		<label class="fridgeLabel" id="fridgeLabel1">Fridge Name</label>
+	</div>
+	
+	<div id="fridgeSelector">
+		<select>
+			<option>Select Another Fridge</option>
+			<option>Fridge 1</option>
+			<option>Fridge 2</option>
+			<option>Fridge 3</option>
+		</select>
+		<button id="changeFridgeButton">Go</button>
+	</div>
+	
+	<div id="fridgeDisplayContainer">
+		<div id="itemFunctionsContainer">
+			<%= render 'layouts/fridge_display/add_item' %>
+			<%= render 'layouts/fridge_display/move_to_fridge' %>
+		</div>
+	</div>
+	
+	<div id="fridgeDisplay">
+		<label class="fridgeLabel" id="fridgeLabel2">Fridge Name</label>
+		<%= render 'layouts/fride_display/display_tables' %>
+	</div>
+</div>
