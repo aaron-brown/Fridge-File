@@ -6,6 +6,7 @@ SampleApp110811::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
+  match '/fridge-display', :to => 'pages#fridge_display'
   match '/signup', :to => 'users#new'
 
   # The priority is based upon order of creation:

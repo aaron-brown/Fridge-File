@@ -14,5 +14,9 @@ class PagesController < ApplicationController
   def help
     @title = "Help"
   end
+  
+  def fridge_display
+    @title = "Fridge Display"
+  end
 
 end
