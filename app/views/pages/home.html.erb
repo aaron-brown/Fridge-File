@@ -1,4 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to Fridge File</h1>
+<h3>Family Fridge Managment System</h3>
 
-<%= link_to "Sign up now!", new_user_path, :class => "signup_button round" %>
+<% if signed_in? %>
+<h1> Thank you for signing in!</h1>
+<% else %>
+<h2>Sign In!</h2>
+<%= render 'layouts/sign_in_form' %>
+<hr />
+<h2>Quick Sign-Up:</h2>
+<%= render 'layouts/sign_up_form' %>
+<% end %>
