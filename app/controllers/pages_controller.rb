@@ -16,7 +16,8 @@ class PagesController < ApplicationController
   end
   
   def fridge_display
-    @title = "Fridge Display"
+    @user = current_user
+    @title = "#{@user.name}'s Fridges"
   end
 
 end
