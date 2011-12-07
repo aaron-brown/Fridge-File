@@ -2,19 +2,17 @@ require 'spec_helper'
 
 describe Fridge do
   before(:each) do
-    @attr = {
-      :name => "fridge",
-      :user_id => 1
-    }
-  end
+      @user = Factory(:user)
+      @attr = { :name => "Fridge" }
+    end
   
   it "should create a new instance given valid attributes" do
-    @user.fridges.create!(@attr)
+      @user.fridges.create!(@attr)
   end
   
   describe "Associations" do
     before(:each) do
-      @frdige = @user.fridges.create(@name)
+      @fridge = @user.fridges.create(@attr)
     end
     
     it "should have a user attribute" do
@@ -22,8 +20,8 @@ describe Fridge do
     end
     
     it "should have the right associated user" do
-      @fridge.user_id.shoul_be == @user.id
-      @fridge.user == @user
+      @fridge.user_id.should == @user.id
+      @fridge.user.should == @user
     end
   end
 end
