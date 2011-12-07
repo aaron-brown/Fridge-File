@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   
   validates :name, :presence => true
   
-  has_many :fridges
+  has_many :fridges, :dependent => :destroy
 end
