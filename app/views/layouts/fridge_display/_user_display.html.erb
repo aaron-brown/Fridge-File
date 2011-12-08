@@ -5,11 +5,21 @@
 </div>
 
 <div id="fridgeSelector">
-	<select>
-		<option>Select Another Fridge</option>
-		<option>Fridge 1</option>
-		<option>Fridge 2</option>
-		<option>Fridge 3</option>
+	<select id="fridgeSelect">
+		<option value="0">Select Another Fridge</option>
+		<% @user.fridges.each do |fridge| %>
+		<option id="fridge-id-<%= fridge.id %>" name="<%= fridge.name %>" value="<%= fridge.id %>"><%= fridge.name %></option>
+		<% end %>
 	</select>
-	<button type="submit">Go</button>
+	<button id="fridgeChangeButton">Go</button>
+	<script>
+		$('#fridgeChangeButton').bind('click', function() {
+ 			currentFridgeId = document.getElementById("fridgeSelect").value;
+ 			currentFridge = document.getElementById("fridge-id-" + currentFridgeId).name;
+ 			if(currentFridge == 0)
+ 				return writeData("fridgeLabel1", "Select a Fridge")
+ 			else
+  				return writeData("fridgeLabel1", currentFridgeId);
+		});
+	</script>
 </div>

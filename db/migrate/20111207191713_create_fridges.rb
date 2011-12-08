@@ -6,16 +6,7 @@ class CreateFridges < ActiveRecord::Migration
       
       t.timestamps
     end
-    add_index :fridges, :user_id
-  end
-  
-    def self.change
-    create_table :fridges do |t|
-      t.string :name
-      t.integer :user_id
-      
-      t.timestamps
-    end
+    
     add_index :fridges, :user_id
   end
   

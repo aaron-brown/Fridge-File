@@ -2,9 +2,9 @@
 	<h3>Move Selected Items</h3>
 	<select>
 		<option>Move to Fridge</option>
-		<option>Fridge 1</option>
-		<option>Fridge 2</option>
-		<option>Fridge 3</option>
+		<% @user.fridges.each do |fridge| %>
+		<option value="<%= fridge.id %>"><%= fridge.name %></option>
+		<% end %>
 	</select>
 	<button type="submit" id="moveButton">&#8592; Move</button>
 </div>
