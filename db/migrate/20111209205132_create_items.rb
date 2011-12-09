@@ -4,8 +4,11 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.integer :quantity
       t.date :expiration_date
+      t.integer :fridge_id
 
       t.timestamps
     end
+    
+    add_index :items, :fridge_id
   end
 end
