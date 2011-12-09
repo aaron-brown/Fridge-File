@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207191713) do
+ActiveRecord::Schema.define(:version => 20111209205132) do
 
   create_table "fridges", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20111207191713) do
   end
 
   add_index "fridges", ["user_id"], :name => "index_fridges_on_user_id"
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.integer  "quantity"
+    t.date     "expiration_date"
+    t.integer  "fridge_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["fridge_id"], :name => "index_items_on_fridge_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
