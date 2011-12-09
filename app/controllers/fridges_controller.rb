@@ -19,9 +19,25 @@ class FridgesController < ApplicationController
   def destroy
   end
   
+  def index
+    @fridges = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @fridges }
+    end
+  end
+
+
+  
   def show
     @user = current_user
-    @fridge = Fridge.find(params[:id])
+    @fridge = Fridge.find(params[:fridge][:id])
     @title = "#{@user.name}'s Fridges"
+    
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @fridges }
+      end
   end
 end

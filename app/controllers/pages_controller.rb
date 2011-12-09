@@ -19,9 +19,8 @@ class PagesController < ApplicationController
     @title = "Help"
   end
   
-  def fridge_display
-    @user = current_user
-    @title = "#{@user.name}'s Fridges"
+  def fridges
+    redirect_to fridges_path
   end
 
 end
