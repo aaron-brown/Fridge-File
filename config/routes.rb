@@ -3,18 +3,16 @@ SampleApp110811::Application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :fridges, :only => [:new, :show, :create, :destroy]
+  resources :fridges
   
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
-  match '/fridge-display', :to => 'fridges#show'
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'
-  match '/create-user', :to => 'users#create'
   match '/signout', :to => 'sessions#destroy'
-
+  match '/fridges', :to => 'fridges#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

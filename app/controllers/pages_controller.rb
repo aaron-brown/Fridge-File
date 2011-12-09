@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @title = "Home"
     if signed_in?
       @user = current_user
+      @fridge = Fridge.new
     end
   end
 

@@ -1,7 +1,6 @@
-
 <div id="fridgeSelector">
 		<%= form_for :fridge, :url => fridges_path do |f| %>
-			<%= select("post", "fridge_id", @user.fridges.collect {|fridge| [ fridge.name, fridge.id ] }, {:prompt => 'Select a fridge'}) %>
+			<%= f.text_field :id %>
 			<%= f.submit "and view it" %>
 		<% end %>
 </div>
