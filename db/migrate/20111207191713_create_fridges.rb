@@ -7,7 +7,7 @@ class CreateFridges < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :fridges, :user_id
+    add_index :fridges, :urakeser_id
   end
   
   def self.down

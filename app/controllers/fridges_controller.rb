@@ -18,4 +18,10 @@ class FridgesController < ApplicationController
   
   def destroy
   end
+  
+  def show
+    @user = current_user
+    @fridge = Fridge.find(params[:id])
+    @title = "#{@user.name}'s Fridges"
+  end
 end

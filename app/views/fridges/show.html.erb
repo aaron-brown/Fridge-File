@@ -1,0 +1,29 @@
+<script>
+	var currentFridge = null;
+	var currentFridgeID = null;
+	var writeData = function(element,data) {
+		var e;
+  		e = document.getElementById(element);
+  		if (!e.firstChild) {
+   		return e.appendChild(document.createTextNode(data));
+  		} else {
+    	return e.firstChild.data = data;
+  		}
+	};
+</script>
+
+<div id="userDataContainer">
+	<%= render 'layouts/fridge_display/user_display' %>
+</div>
+
+<div id="fridgeDisplayContainer">
+	<div id="itemFunctionsContainer">
+		<%= render 'layouts/fridge_display/add_item' %>
+		<%= render 'layouts/fridge_display/move_item' %>
+	</div>
+	
+	<div id="fridgeDisplay">
+		<%= render 'layouts/fridge_display/display_tables' %>
+		<button>Empty Fridge</button>
+	</div>
+</div>

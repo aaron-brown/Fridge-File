@@ -9,7 +9,7 @@ SampleApp110811::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
-  match '/fridge-display', :to => 'pages#fridge_display'
+  match '/fridge-display', :to => 'fridges#show'
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'
   match '/create-user', :to => 'users#create'

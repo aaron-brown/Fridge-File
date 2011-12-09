@@ -4,22 +4,4 @@
 	<label class="fridgeLabel" id="fridgeLabel1">Fridge Name</label>
 </div>
 
-<div id="fridgeSelector">
-	<select id="fridgeSelect">
-		<option value="0">Select Another Fridge</option>
-		<% @user.fridges.each do |fridge| %>
-		<option id="fridge-id-<%= fridge.id %>" name="<%= fridge.name %>" value="<%= fridge.id %>"><%= fridge.name %></option>
-		<% end %>
-	</select>
-	<button id="fridgeChangeButton">Go</button>
-	<script>
-		$('#fridgeChangeButton').bind('click', function() {
- 			currentFridgeId = document.getElementById("fridgeSelect").value;
- 			currentFridge = document.getElementById("fridge-id-" + currentFridgeId).name;
- 			if(currentFridge == 0)
- 				return writeData("fridgeLabel1", "Select a Fridge")
- 			else
-  				return writeData("fridgeLabel1", currentFridgeId);
-		});
-	</script>
-</div>
+<%= render 'layouts/fridge_display/fridge_selector' %>
