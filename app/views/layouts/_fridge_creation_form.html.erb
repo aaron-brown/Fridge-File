@@ -1,10 +1,5 @@
 <%= form_for :fridge, :url => fridges_path do |f| %>
-<div class="field">
-	<%= f.label :name %>
+	<%= f.label "Name your fridge:" %>
 	<%= f.text_field :name %>
-</div>
-  
-<div class="actions" >
-    <%= f.submit "Create" %>
-</div>
+	<%= f.submit "and create it!" %>
 <% end %>

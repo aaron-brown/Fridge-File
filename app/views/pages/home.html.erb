@@ -2,9 +2,10 @@
 <h3>Family Fridge Managment System</h3>
 
 <% if signed_in? %>
-<h1>Hello</h1>
+<h1>Hello <%= @user.name %></h1>
 	<p>
-	If you're new <%= link_to "create a new fridge", new_fridge_path %> or <%= render 'layouts/fridge_display/fridge_selector' %>
+	If you're new <%= render 'layouts/fridge_creation_form' %>
+	<%= render 'layouts/fridge_display/fridge_selector' %>
 	</p>
 <% else %>
 <h2>Sign In!</h2>

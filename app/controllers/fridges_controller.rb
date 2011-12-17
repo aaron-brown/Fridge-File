@@ -10,7 +10,7 @@ class FridgesController < ApplicationController
     @fridge = current_user.fridges.build(params[:fridge])
     if @fridge.save
       flash[:success] = "Fridge created"
-      redirect_to root_path
+      redirect_to current_user
     else
       render 'pages/home'
     end

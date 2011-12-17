@@ -1,3 +1,13 @@
-<h1>Welcome <%= @user.name %></h1>
-
-<%= link_to 'Home', root_path %>
+<% if signed_in? %>
+<h1><h1>Welcome <%= @user.name %></h1></h1>
+	<p>
+	If you're new <%= render 'layouts/fridge_creation_form' %>
+	<%= render 'layouts/fridge_display/fridge_selector' %>
+	</p>
+<% else %>
+<h2>Sign In!</h2>
+<%= render 'layouts/sign_in_form' %>
+<hr />
+<h2>Quick Sign-Up:</h2>
+<%= render 'layouts/sign_up_form' %>
+<% end %>
