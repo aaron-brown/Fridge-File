@@ -21,7 +21,7 @@
 			<td>
 				<%= button_to "+1", increment_item_path(item), :method => 'put', :remote => true %>
 				<%= button_to "-1", decrement_item_path(item), :method => 'put', :remote => true %>
-				<%= button_to "Remove", :method => 'delete' %>
+				<%= button_to "Remove", items_path(item), :method => 'delete', :remote => true %>
 			</td>
 		</tr>
 		<% end %>
