@@ -13,113 +13,17 @@
 
 <div id="contentTableDiv">
 	<table id="contentTable">
+		<% @fridge.items.each do |item| %>
 		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>03/01/2012</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
+			<td><%= item.name %></td>
+			<td><%= item.quantity %></td>
+			<td><%= item.expiration_date %></td>
+			<td>
+				<%= button_to "+1", increment_item_path(item), :method => 'put', :remote => true %>
+				<%= button_to "-1", decrement_item_path(item), :method => 'put', :remote => true %>
+				<%= button_to "Remove", :method => 'delete' %>
+			</td>
 		</tr>
-		<tr>
-			<td>Oranges</td>
-			<td>40</td>
-			<td>11/11/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apple Sauce</td>
-			<td>15</td>
-			<td>04/15/2014</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Juicy Juice</td>
-			<td>1</td>
-			<td>03/08/2012</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Heads of Lettuce</td>
-			<td>2</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Milk <br /> 1/2 Gallon <br /> 2% Reduced Fat</td>
-			<td>10</td>
-			<td>11/18/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
-		<tr>
-			<td>Apples</td>
-			<td>10</td>
-			<td>11/10/2011</td>
-			<td><%= render 'layouts/fridge_display/function_buttons' %></td>
-		</tr>
+		<% end %>
 	</table>
 </div>

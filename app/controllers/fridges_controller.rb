@@ -15,7 +15,7 @@ class FridgesController < ApplicationController
       render 'pages/home'
     end
   end
-  
+    
   def destroy
   end
   
@@ -33,6 +33,7 @@ class FridgesController < ApplicationController
   def show
     @user = current_user
     @fridge = Fridge.find(params[:fridge][:id])
+    $current_fridge = @fridge
     @title = "#{@user.name}'s Fridges"
     
       respond_to do |format|

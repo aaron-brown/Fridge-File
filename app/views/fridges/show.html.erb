@@ -1,29 +1,15 @@
-<script>
-	var currentFridge = null;
-	var currentFridgeID = null;
-	var writeData = function(element,data) {
-		var e;
-  		e = document.getElementById(element);
-  		if (!e.firstChild) {
-   		return e.appendChild(document.createTextNode(data));
-  		} else {
-    	return e.firstChild.data = data;
-  		}
-	};
-</script>
-
 <div id="userDataContainer">
-	<%= render 'layouts/fridge_display/user_display' %>
+	<%= render 'layouts/fridge_display/user_display', :remote => true %>
 </div>
 
 <div id="fridgeDisplayContainer">
 	<div id="itemFunctionsContainer">
-		<%= render 'layouts/fridge_display/add_item' %>
-		<%= render 'layouts/fridge_display/move_item' %>
+		<%= render 'layouts/fridge_display/add_item', :remote => true %>
+		<%= render 'layouts/fridge_display/move_item', :remote => true %>
 	</div>
 	
 	<div id="fridgeDisplay">
-		<%= render 'layouts/fridge_display/display_tables' %>
+		<%= render 'layouts/fridge_display/display_tables', :remote => true %>
 		<button>Empty Fridge</button>
 	</div>
 </div>

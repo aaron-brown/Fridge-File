@@ -1,11 +1,17 @@
 <div id="addItem">
 	<h3>Add Item</h3>
-	<form>
-		<label>Name: <input type="text" maxlength="16" size="15"></input></label> <br />
-		<label>Quantity: <input type="text" maxlength="3" size="1"></input></label>
-		<br /><br />
-		(Optional) <br />
-		<label>Expriation: <input type="text" size="6"></input></label> <br />
-		<button type="submit" id="addItemButton">Add &#8594;</button>
-	</form>
+	<%= form_for :item, :url => items_path do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br />
+	<%= f.label :quantity %>
+	<%= f.text_field :quantity %>
+	<br />
+	<%= f.label "(Optional)" %>
+	<br />
+	<%= f.label :expiration_date %>
+	<%= f.date_select :expiration_date %>
+	<br />
+	<%= f.submit raw "Add &#8594;" %>
+	<% end %>
 </div>
